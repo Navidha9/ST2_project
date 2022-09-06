@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+     #nav_div{
+    height:auto;
+    width:100%;
+    background-image:url("C:\Users\91870\Downloads\img1.jpg");
+}
+
+#nav_div p{
+    font-size: 40px;
+    font-family: Georgia, serif;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#nav_div span{
+    font-family:Georgia, serif;
+    font-size: 40px;
+    color: rgb(49, 198, 131);
+}
+
+#add_new_item{
+    height: 5rem;
+    width: 90%;
+}
+
+#plus{
+    font-weight: bolder;
+    font-size: 25px;
+    margin-bottom: 1px;
+}
+
+#d1{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(49, 198, 131);
+    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    float: right;
+    vertical-align: top;
+}
+
+#d1:hover{
+    cursor: pointer;
+}
+
+
+#d2{
+    height: 3rem;
+    width: auto;
+    margin-top: 3rem;
+    margin-right: 3rem;
+    float: right;
+    vertical-align: top;
+}
+
+#d2 p{
+    font-size: 25px;
+    font-family:Georgia, serif;
+    margin-top: 0.5rem;
+}
+
+#i1{
+    height: 100%;;
+    width: 100%;
+}
+
+#list_body{
+    box-shadow: 0px 0px 10px 0px #42424271 inset;
+    height:40rem;
+    width:100%;
+    background-color: rgb(201, 240, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#container{
+    height: auto;
+    background-color: rgb(201, 240, 214);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#noTasks{
+    font-size: 40px;
+    padding-top: 10rem;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    color: rgb(195, 195, 199);
+}
+
+.card_div{
+    height: 22rem;
+	width: 20rem;
+	padding: 10px;
+	display: inline-block;
+	border-radius: 20px;
+	margin: 2rem;
+	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+	background-color: white;
+}
+
+.card_title{
+    border-bottom: 1px solid black;
+}
+
+.card_title p{
+    font-size: 25px;
+    font-family:Georgia, serif;
+    color: rgb(49, 198, 131);
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.card_title:hover{
+    cursor: pointer;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.item span{
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    font-size: 18px;
+    font-family: Georgia, serif;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: rgb(180, 180, 180);
+}
+
+.input_container{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task_container, #item_container{
+    height: 13rem;
+    width: 25rem;
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+#add_task_title, #add_item_title{
+    border-bottom: 1px solid rgb(195, 195, 199);
+    
+}
+
+#add_task_title p{
+    font-size: 20px;
+    font-family:Georgia, serif;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+#add_item_title p{
+    font-size: 20px;
+    font-family:Georgia, serif;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+#closeTaskInput, #closeItemInput{
+    float:right;
+    margin-top: -3rem;
+    margin-right: 1rem;
+}
+
+
+#closeTaskInput:hover{
+    cursor: pointer;
+}
+
+#closeItemInput:hover{
+    cursor: pointer;
+}
+
+#add_task_body, #add_item_body{
+    height: auto;
+    width: 22.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+}
+
+#add_task_footer, #add_item_footer{
+    width: 22.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+
+#add_task_button, #add_item_button{
+    height: 2.5rem;
+    width: 8rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(49, 198, 131);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
+#add_task_button:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+#add_item_button:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+#add_task_button p{
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-family:Georgia, serif;
+}
+
+#add_item_button p{
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-family:Georgia, serif;
+}
+
+
+
+
+.p1{
+    font-size: 20px;
+    font-family:Georgia, serif;
+    color: rgb(49, 198, 131);
+    margin: 1rem;
+}
+
+.p2{
+    display: inline;
+    margin-bottom: 2rem;
+    margin-left: 0.4rem;
+    font-size: 18px;
+    font-family:Georgia, serif;
+}
+
+input[type="checkbox"]{
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-left: 0.8rem;
+    margin-top: 1rem;
+}
+
+input[type="text"]{
+    height: 2.5rem;
+    width: 100%;
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    border: none;
+}
+</style>
+<body>
+    <nav id="nav">
+        <div id="nav_div">
+            <p>Tasks <span>List</span></p>
+        </div>
+    </nav>
+
+    <div id="list_body" >
+        <div id="add_new_item">
+            <div id="d2">
+                <p>Add New Task</p>
+            </div>
+            <div id="d1">
+               <p id="plus">+</p>
+            </div>
+        </div>
+
+        <div id="container">
+            <p id="noTasks">No Tasks Yet</p>
+        </div>
+
+    </div>
+        <div id="task_input_container" class="input_container">
+            <div id="task_container">
+                <div id="add_task_title">
+                    <p>Add New Task</p>
+                    <span id="closeTaskInput" class="closeInput">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+                <div id="add_task_body">
+                    <input type="text" id="task">
+                </div>
+                <div id="add_task_footer">
+                    <div id="add_task_button">
+                        <p>+Add Task</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="item_input_container" class="input_container">
+            <div id="item_container">
+                <div id="add_item_title">
+                    <p>Add New Item</p>
+                    <span id="closeItemInput" class="closeInput">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+                <div id="add_item_body">
+                    <input type="text" id="item">
+                </div>
+                <div id="add_item_footer">
+                    <div id="add_item_button">
+                        <p>+ Add Item</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script src=to_do_js.js></script>
+    
+</body>
+
+</html>
